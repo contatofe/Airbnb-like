@@ -1,14 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="shadow-sm">
+    <header className="shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-        <div className="flex max-w-[100px] items-center">
+        <Link to="/" className="flex max-w-[100px] items-center">
           <img src="/logo.webp" alt="logo do airbnb" />
-        </div>
+        </Link>
 
-        <div className="flex items-center rounded-full border border-gray-300 px-4 py-2 pl-6 shadow-md">
+        <Link
+          to="/"
+          className="hidden items-center rounded-full border border-gray-300 px-4 py-2 pl-6 shadow-md lg:flex"
+        >
           <p className="border-r border-r-gray-300 pr-4">Qualquer lugar</p>
           <p className="border-r border-r-gray-300 px-4">Qualquer semana</p>
           <p className="px-4">Hóspedes</p>
@@ -28,9 +32,12 @@ const Header = () => {
               />
             </svg>
           </div>
-        </div>
+        </Link>
 
-        <div className="flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 shadow-md">
+        <Link
+          to="/login"
+          className="flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 shadow-md"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -57,10 +64,10 @@ const Header = () => {
             />
           </svg>
 
-          <p>Nome Sobrenome</p>
-        </div>
+          <p className="max-w-20 truncate sm:max-w-40">Nome Sobrenome</p>
+        </Link>
       </div>
-    </div>
+    </header>
   );
 };
 
